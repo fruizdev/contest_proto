@@ -1,13 +1,16 @@
 <html>
 <head>
-<title> 	challenge test </title>	
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+<title>keygen proto</title>	
+<meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8">
 <link rel="stylesheet" href="css/material.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">  
 <script src="js/material.min.js"></script>
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">    
+<script src="js/angular.min.js"></script>
+    <script src="js/controllers.js"></script>
+<!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>-->
+
 </head>
-<body>
+<body ng-app="TournamentGen"  >
 
     <!-- Simple header with fixed tabs. -->
 <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header
@@ -19,53 +22,38 @@
     </div>
     <!-- Tabs -->
     <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
-      <a href="#fixed-tab-1" class="mdl-layout__tab is-active">Inscripciónes</a>
+      <a href="#fixed-tab-1" class="mdl-layout__tab is-active">Inscripciones</a>
       <a href="#fixed-tab-2" class="mdl-layout__tab">Torneo</a>
       <a href="#fixed-tab-3" class="mdl-layout__tab">Historial</a>
     </div>
   </header>
-  <div class="mdl-layout__drawer">
+  
+    <div class="mdl-layout__drawer">
     <span class="mdl-layout-title">Torneo</span>
   </div>
     
   <main class="mdl-layout__content">
     
       <section class="mdl-layout__tab-panel is-active" id="fixed-tab-1">
-      <div class="page-content"><!-- Your content goes here --></div>
-    </section>
-    <section class="mdl-layout__tab-panel" id="fixed-tab-2">
       <div class="page-content"><!-- Your content goes here -->
-   
           
+                <div ng-include src="'tab1.html'"></div>
           
-<!-- CREACION DEL TOURNAMENT -->
-          
-        <form action="#" class="">
-      <div class="mdl-textfield mdl-js-textfield">
-        <input id ="nro" class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" >
-        <label class="mdl-textfield__label" for="sample2">Numero de participantes...</label>
-        <span class="mdl-textfield__error">Debe ingresar un numero!</span>
-      </div>
+        </div>
+    
+      
+      </section>
+      
+      <!-- CREACION DEL TOURNAMENT -->
+    <section class="mdl-layout__tab-panel" id="fixed-tab-2">
+      <div class="page-content">      <!-- Your content goes here -->   
+       
+      <div ng-include src="'tab2.html'"></div>
 
-
-        <button data-disable-with="Generando..."
-            onclick="creaLlaves()"  
-            class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-            Generar llaves</button> 
-        
-    <p> cupos disponibles primera ronda  <input class="mdl-textfield__input" id ="cupos_1ronda" type="text"  ></p> 	
-    <p> cupos a definir desde eliminatoria <input class="mdl-textfield__input" id ="cupos_elim" type="text"  >	 </p> 
-    <p> participantes instalados en primera ronda  <input class="mdl-textfield__input" id ="primera_ronda" type="text"  ></p> 
-
-    <p id="elim"></p>
-
-    <p id="1ronda"></p>	
-    </form>
-
-        
-        
+  
         </div>
     </section>
+      
     <section class="mdl-layout__tab-panel" id="fixed-tab-3">
       <div class="page-content"><!-- Your content goes here --></div>
     </section>

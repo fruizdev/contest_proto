@@ -1,0 +1,21 @@
+  <form action="#" style="text-align:center">
+    <div class="mdl-textfield mdl-js-textfield">
+        <input id ="nro" class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" >
+        <label class="mdl-textfield__label" for="sample2">Numero de participantes...</label>
+        <span class="mdl-textfield__error">Debe ingresar un numero!</span>
+      </div>
+
+
+        <button data-disable-with="Generando..."
+            onclick="creaLlaves()"  
+            class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+            Generar llaves</button> 
+        
+    <p> cupos disponibles primera ronda  <input class="mdl-textfield__input" id ="cupos_1ronda" type="text"  ></p> 	
+    <p> cupos a definir desde eliminatoria <input class="mdl-textfield__input" id ="cupos_elim" type="text"  >	 </p> 
+    <p> participantes instalados en primera ronda  <input class="mdl-textfield__input" id ="primera_ronda" type="text"  ></p> 
+
+    <p id="elim"></p>
+
+    <p id="1ronda"></p>	
+    </form>
