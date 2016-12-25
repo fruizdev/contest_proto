@@ -1,56 +1,50 @@
 <html>
-<head>
+<head  >
 <title>keygen proto</title>	
 <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8">
 <link rel="stylesheet" href="css/material.min.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">  
 <script src="js/material.min.js"></script>
 <script src="js/angular.min.js"></script>
-    <script src="js/controllers.js"></script>
+<script src="js/controllers.js"></script>
+    <script type="text/javascript" src="js/gen.js"></script>
 <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>-->
+</head >
+<body  ng-app="TournamentGen"  >
 
-</head>
-<body ng-app="TournamentGen"  >
-
+    <style>
+.demo-layout-transparent {
+  background: url('img/back.jpg') center / cover;
+}
+.demo-layout-transparent .mdl-layout__header,
+.demo-layout-transparent .mdl-layout__drawer-button {
+  /* This background is dark, so we set text to white. Use 87% black instead if
+     your background is light. */
+  color: white;
+}
+</style>
+    
     <!-- Simple header with fixed tabs. -->
-<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header
+<div class=" demo-layout-transparent mdl-layout mdl-js-layout mdl-layout--fixed-header
             mdl-layout--fixed-tabs">
-  <header class="mdl-layout__header">
-    <div class="mdl-layout__header-row">
-      <!-- Title -->
-      <span class="mdl-layout-title">Generador de llaves de torneo - {proto}</span>
-    </div>
-    <!-- Tabs -->
-    <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
-      <a href="#fixed-tab-1" class="mdl-layout__tab is-active">Inscripciones</a>
-      <a href="#fixed-tab-2" class="mdl-layout__tab">Torneo</a>
-      <a href="#fixed-tab-3" class="mdl-layout__tab">Historial</a>
-    </div>
-  </header>
+ 
+    
+<header ng-include src="'header.html'" class="mdl-layout__header"> </header>
   
-    <div class="mdl-layout__drawer">
-    <span class="mdl-layout-title">Torneo</span>
-  </div>
-    
-  <main class="mdl-layout__content">
-    
+<div ng-include src="'menu.html'" class="mdl-layout__drawer"> </div>
+
+<main class="mdl-layout__content">
+
       <section class="mdl-layout__tab-panel is-active" id="fixed-tab-1">
       <div class="page-content"><!-- Your content goes here -->
-          
                 <div ng-include src="'tab1.html'"></div>
-          
         </div>
-    
-      
       </section>
       
-      <!-- CREACION DEL TOURNAMENT -->
+ 
     <section class="mdl-layout__tab-panel" id="fixed-tab-2">
       <div class="page-content">      <!-- Your content goes here -->   
-       
       <div ng-include src="'tab2.html'"></div>
-
-  
         </div>
     </section>
       
@@ -59,15 +53,11 @@
     </section>
   </main>
 </div>
-    
 <br>
-    
-
-
 </body>
 
  
-<script type="text/javascript" src="js/gen.js"></script>
+
 
  
 </html>
