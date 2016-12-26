@@ -1,51 +1,46 @@
 
-<!-- Textfield with Floating Label -->
-
-<form action="#">
-  <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
-    <input class="mdl-textfield__input" type="text" id="sample3">
-    <label class="mdl-textfield__label" for="sample3">Text...</label>
+<div class ="ng-scope" style="text-align:center"  ng-controller="Insc_Ctrl2">
+    
+   <form action="#">
+  <div  class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+    <input text="ddd" value="vaaa" pattern=".{1,25}"  ng-model="contester.name"  class="mdl-textfield__input validate" type="text" id="contesterInput">
+    <label data-error="wrong" data-success="right" class="mdl-textfield__label" for="contesterInput">Nombre participante...</label>
   </div>
+    
+         
+       
+     <div  add-to-the-list>
+          <button id ="addComp" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored">
+                <i class="material-icons">add</i> 
+          </button> 
+         <p class ="mdl-label">Agregar al torneo !!</p>
+            <div id ="genResult"  ></div>
+         
+        
+
+       <button id ="genKeys"  
+            class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+              <i class="material-icons">done</i> Generar las  llaves   
+         </button>  
+        
+           <button id ="restartTournament"   
+            class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+              <i class="material-icons">autorenew</i> Comenzar de nuevo   
+         </button>  
+        
+        <ol  class="demo-list-item mdl-list">
+  
+        </ol>
+        
+    </div>
+       
+       
 </form>
 
+  
+    
 
-<div style="text-align:center"  ng-controller="Insc_Ctrl">
-    <div add-input>
-        <button>Agregar participante</button>
-    </div>
     
-    
-    <!-- Colored FAB button -->
-<button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored">
-  <i class="material-icons">add</i>
-</button>
-<!-- Colored FAB button with ripple -->
-<button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect ">
-  <i class="material-icons">add</i>
-</button>
-    
-    
-<ul class="demo-list-item mdl-list">
-  <li class="mdl-list__item">
-    <span class="mdl-list__item-primary-content">
-      Bryan Cranston
-    </span>
-  </li>
-  <li class="mdl-list__item">
-    <span class="mdl-list__item-primary-content">
-      Aaron Paul
-    </span>
-  </li>
-  <li class="mdl-list__item">
-    <span class="mdl-list__item-primary-content">
-      Bob Odenkirk
-    </span>
-  </li>
-</ul>
-    
-    <button data-disable-with="Generando..."
-            onclick="creaLlaves()"  
-            class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-            Generar llaves</button>   
+  
     
 </div>
