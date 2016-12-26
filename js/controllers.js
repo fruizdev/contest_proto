@@ -7,10 +7,15 @@ app.controller('Insc_Ctrl', ['$scope', function ($scope) {
         
       angular.element(document.querySelector( '#genkeys' )).bind('click', function () {
            labelGen.empty();
-        var cantCont=$scope.contester.length;
-             var Torneo = [];
-            var match;
-         if( cantCont >=2){   
+      
+        var Torneo = [];
+        var match;
+        var used=[];
+         if( true == true){   //   cantCont >=2 
+          ///para test:
+          //  $scope.contester = ['uno','dos','tres','cuatro','cinco','seis','siete','ocho','nueve','diez','once'];
+               $scope.contester = ['uno','dos','tres','cuatro','cinco','seis','siete','ocho','nueve','diez','once','doce','trece','catorce','quince','dieciseis','diesiciete','diesiocho','diecinueve','veinte','veintiuno','veintidos','veititres'];
+            var cantCont=$scope.contester.length;
             var exp;
             for (e = 1; cantCont >=  Math.pow(2, e) ; e++) {exp=e ;}     
             var cupos_1ronda= Math.pow(2, exp) ;
@@ -18,28 +23,36 @@ app.controller('Insc_Ctrl', ['$scope', function ($scope) {
             var participantes_1ronda =  Math.pow(2, exp) - (cantCont  - Math.pow(2, exp) );  
             var genResult = angular.element('<h4> <strong>' + cantCont  + '</strong> Participantes.<br> Hay <strong>' + cupos_1ronda + '</strong> cupos en primera ronda,<strong> '  + cupos_elim +'</strong> a definir desde eliminatorias.</h4>');
             labelGen.append(genResult); 
-         
-           for(i=0 ; cantCont > i ; i++){
-               if( i < participantes_1ronda){
-                   if( (participantes_1ronda - i) > i){
-                       match = { c1: $scope.contester[i],  c2:$scope.contester[i+1], nro:null, round:1, link:null, prio:-1} ;
-                       Torneo.push(match);  
-                   }else{ 
-                       match = { c1: $scope.contester[i],  c2: "", nro:null, round:1, link:null, prio:-1} ;
+           var nro=0;
+             
+            for (var player = cantCont-1 ; player >= 0 ; player--){  
+                if(  used.indexOf(player) == -1){
+                     nro=nro+1;
+                if( player >=  cantCont-(cupos_elim*2)) {  //eliminatorias
+                       match = { c1: $scope.contester[player],  c2: $scope.contester[player-1], nro:nro, round:0, link:null, prio:null} ;
                        Torneo.push(match); 
-                   }         
-               }
-               else if( i >= participantes_1ronda){
-                   match = { c1: $scope.contester[i],  c2: "", nro:null, round:0, link:null, prio:-1} ;
-                   Torneo.push(match);       
-               }
-                   
-           }
+                       used.push(player);
+                       used.push(player-1);
+                }else 
+                    if( player <=  cantCont - (cupos_elim*2) ) { //primera ronda  
+                         if( (participantes_1ronda - player) < player){
+                               match = { c1: $scope.contester[player],  c2:$scope.contester[player-1], nro:nro, round:1, link:null, prio:null} ;
+                               Torneo.push(match); 
+                               used.push(player);
+                               used.push(player-1);
+                           }else{ 
+                               match = { c1: $scope.contester[player],  c2: "", nro:nro, round:1, link:null, prio:null} ;
+                               Torneo.push(match);
+                               used.push(player);
+                           }
+                    
+                }
+            }
+                
+            }     
              
             console.log( Torneo );        
-             
-             
-             
+               
              // definir vs de eliminatoria // empieza en cupos_1ronda + 1, hasta participantes	total
             for( i = (participantes_1ronda); i < cantCont; i=i+2 ){     
               document.getElementById("faseElim").innerHTML=  
@@ -64,13 +77,8 @@ app.controller('Insc_Ctrl', ['$scope', function ($scope) {
          }
       });
     
-    // This is just so you can see the array values changing and working! Check your console as you're typing in the inputs :)
     $scope.$watch('contester', function (value) {         console.log(value);     }, true);
 }]);
-
- 
-
-
 
 app.directive('addToTheList', ['$compile', function ($compile) { // inject $compile service as dependency
     return {
