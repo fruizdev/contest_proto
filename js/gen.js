@@ -4,7 +4,8 @@
     	document.getElementById("1ronda").innerHTML="PRIMERA RONDA <br>";
 
     	var participantes =  document.getElementById("nro").value;  // el numero de participantes
-    if(participantes < 1000){
+        
+        if(participantes < 1000){
         for (exp = 1; participantes >=  Math.pow(2, exp) ; exp++) {
     	  
     	  	 // cupos disponibles en primera ronda
