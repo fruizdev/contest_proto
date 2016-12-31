@@ -1,11 +1,7 @@
 var app = angular.module('TournamentGen', []);
 
-
- 
-
-
-
 app.controller('Insc_Ctrl', ['$scope', function ($scope) {
+    console.log("inscripciones ctrl");
     // Define $scope.competitor as an array
     $scope.contester = [];
      var labelGen =  angular.element(document.querySelector( '#genResult' )); 
