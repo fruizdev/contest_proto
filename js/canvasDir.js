@@ -26,6 +26,8 @@ app.directive('canvasDir', ['$compile', function ($compile) { // inject $compile
             if(scope.cnt != undefined  && scope.cnt != null  && scope.cnt.name.length >1 ){
                 //PUSH TO ARR[] , CALCULATE DEPTH
                 //aqui crear obj match y agregarlo al arreglo torneo
+               
+                
                 var numberC = scope.cntArr.push(scope.cnt.name);
                 var exp;
                 var depth=1;
