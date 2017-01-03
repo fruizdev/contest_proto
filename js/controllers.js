@@ -1,10 +1,5 @@
 var app = angular.module('TournamentGen', []);
 
-
- 
-
-
-
 app.controller('Insc_Ctrl', ['$scope', function ($scope) {
     // Define $scope.competitor as an array
     $scope.contester = [];
