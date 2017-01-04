@@ -1,32 +1,16 @@
 <html>
 <head  >
 <title>keygen proto</title>	
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="js/angular.min.js"></script>
-<script src="js/controllers.js"></script>
-<script src="js/canvasDir.js"></script>
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="utf-8">
 <link rel="stylesheet" href="css/material.min.css">
-<script src="js/material.min.js"></script>
-<script src="js/Tree.js"></script>
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">  
+<link rel="stylesheet" href="css/jquery.bracket-world.css" />
 
-<script type="text/javascript" src="js/gen.js"></script>
-<!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>-->
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">  
 </head >
 <body  ng-app="TournamentGen"   >
 
-    <style>
-.demo-layout-transparent {
-  /* background: url('https://68.media.tumblr.com/405054802bd58e5cd06becc5836f694a/tumblr_nrlxk3l2mP1r6j7rho1_540.gif') center / cover;**/
-}
-.demo-layout-transparent .mdl-layout__header,
-.demo-layout-transparent .mdl-layout__drawer-button {
-  /* This background is dark, so we set text to white. Use 87% black instead if
-     your background is light. */
-  color: white;
-}
-</style>
+
     
     <!-- Simple header with fixed tabs. -->
 <div class=" demo-layout-transparent mdl-layout mdl-js-layout mdl-layout--fixed-header
@@ -53,16 +37,27 @@
     </section>
       
     <section class="mdl-layout__tab-panel" id="fixed-tab-3">
-      <div class="page-content"><!-- Your content goes here --></div>
+      <div class="page-content">
+          
+           <div ng-include src="'tab3.html'"></div>
+        
+       </div>
     </section>
   </main>
 </div>
 <br>
 </body>
 
- 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="js/angular.min.js"></script>
+<script src="js/material.min.js"></script>
+<script src="js/controllers.js"></script>
+<script src="js/canvasDir.js"></script>
+<script src="js/Tree.js"></script>
+<script src="js/Tree.js"></script>
+<script src="js/jquery.bracket-world.min.js"></script>
 
-
+<!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>-->
  
 </html>
 

@@ -1,0 +1,52 @@
+    <div  class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+<!--     <i class="material-icons">account_circle</i>-->
+             <input  text="ddd" value="vaaa" pattern=".{1,25}"  ng-model="contester.name"  class="mdl-textfield__input validate" type="text" id="contesterInput">
+    <label data-error="wrong" data-success="right" class="mdl-textfield__label" for="contesterInput">Nombre del participante...</label>
+         </div> 
+
+<div id="bracket1">
+
+    
+    
+    
+</div>
+
+<script>
+    
+$('#bracket1').bracket(
+{
+     teams:6,
+    topOffset:50,
+    height:'700px',
+    scale:0.50,
+    icons:true,
+    teamNames:
+    [
+        {
+            name:'uno',
+            seed:'6'
+        },
+        {
+            name:'dos',
+            seed:'5'
+        },
+        {
+            name:'tres',
+            seed:'4'
+        },
+        {
+            name:'Penn State',
+            seed:'3'
+        },
+         {
+            name:'cink',
+            seed:'2'
+        },
+        {
+            name:'sargthe',
+            seed:'1'
+        }
+    ]
+});
+
+</script>
